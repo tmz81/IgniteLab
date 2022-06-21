@@ -14,14 +14,18 @@ const GET_LESSONS_QUERY = gql`
   }
 `
 
+interface LessonProps {
+  id: string,
+  title: string,
+}
+
 export function App() {
 // Maneira simples para pega os dados da query, sem utilizar o useEffect  
-const { data } = useQuery(GET_LESSONS_QUERY)
-console.log(data);
+const { data } = useQuery<{lessons: LessonProps[] }>(GET_LESSONS_QUERY)
   
   return (
-    <div>
-      <h1 className="text-5xl font-bold text-violet-500">Hello World</h1>
-    </div>
+    <ul>{data?.lessons.map(lesson => {
+      return <li key={lesson.id}>{lesson.title}</li>
+    })}</ul>
   )
 }
