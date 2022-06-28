@@ -1,7 +1,7 @@
 <h1 align="center">Ignite Lab - ReactJS</h1>
 
 <div align="center">
-  <img src="./.github/capa-readme.png" width="70%"/>
+  <img src="./.github/capa-readme.png" width="90%"/>
 </div>
 
 
